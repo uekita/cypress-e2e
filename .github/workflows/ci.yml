@@ -15,7 +15,7 @@ jobs:
         run: yarn
       - name: Percy Test
         uses: percy/exec-action@v0.3.0
-                with:
-                  command: "cypress run --browser firefox"
+        with:
+          command: "cypress run --browser firefox"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
