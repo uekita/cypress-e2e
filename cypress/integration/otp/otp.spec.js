@@ -4,6 +4,7 @@ describe('OTP', () => {
         before(() => {
             cy.visit('?hsession=80c047a6-fdcd-4f06-a6a7-573c4706cbd1')
             cy.contains('ATOMOS usa a Quanto para visualizar seus dados bancários');
+            cy.percySnapshot();
         });
 
         it('Start button should be enabled', () => {
