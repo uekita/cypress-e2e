@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.4.1"
+    "cypress": "^4.4.1",
+    "happo-cypress": "0.0.3",
+    "happo.io": "^5.3.1"
   }
 }

@@ -4,19 +4,23 @@ describe('OTP', () => {
         before(() => {
             cy.visit('?hsession=80c047a6-fdcd-4f06-a6a7-573c4706cbd1')
             cy.contains('ATOMOS usa a Quanto para visualizar seus dados bancários');
+            cy.get('h4').happoScreenshot();
         });
 
         it('Start button should be enabled', () => {
             cy.get('#start_connect').should('not.have.attr', 'disabled');
+            cy.get('#start_connect').happoScreenshot();
         })
 
         it('The phone should be filled with value', () => {
             cy.get('#start_connect').click();
             cy.get('#phone').should('have.value', '(11) 98715-3151');
+            cy.get('#phone').happoScreenshot();
         })
 
         it('The button "Continue" should be enabled', () => {
             cy.get('#next_code_verify').should('not.have.attr', 'disabled');
+            cy.get('#next_code_verify').happoScreenshot();
         })
     })
 
