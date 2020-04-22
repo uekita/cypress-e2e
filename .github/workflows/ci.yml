@@ -1,0 +1,27 @@
+name: example-firefox
+on: push
+jobs:
+  firefox:
+    runs-on: ubuntu-latest
+      container:
+        image: cypress/browsers:node13.6.0-chrome80-ff72
+        options: --user 1001
+    steps:
+      - run: whoami
+      - run: id
+      - run: google-chrome --version
+      - run: firefox --version
+      - uses: actions/checkout@v1
+      - uses: cypress-io/github-action@v1
+        with:
+          browser: chrome
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+      - name: Install
+        run: yarn
+      - name: Percy Test
+        uses: percy/exec-action@v0.3.0
+        with:
+          command: "cypress run --browser chrome"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
