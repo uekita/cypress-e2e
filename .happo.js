@@ -1,11 +1,11 @@
 const { RemoteBrowserTarget } = require('happo.io');
 
 module.exports = {
-    apiKey: '4d84576e0f',
-    apiSecret: '19d344588c7894312680e3993',
+    apiKey: '000a78f8b3',
+    apiSecret: '74183ea6796e6947939da53e5',
 
     targets: {
-        'chrome-desktop': new RemoteBrowserTarget('chrome', {
+        'chrome': new RemoteBrowserTarget('chrome', {
             viewport: '1024x768',
         }),
         'chrome-mobile': new RemoteBrowserTarget('chrome', {
@@ -20,5 +20,4 @@ module.exports = {
             scrollStitch: true,
         }),
     },
-
 };
